@@ -1,0 +1,9 @@
+<h2>{{ _('Dashboard') }}</h2>
+<form method="POST" action="/submit">
+  <textarea name="text" rows="6" cols="80" placeholder="{{ _('Paste text here...') }}"></textarea>
+  <button type="submit">{{ _('Analyze') }}</button>
+</form>
+{% if result %}
+  <h3>{{ _('Results') }}</h3>
+  <pre>{{ result | tojson(indent=2) }}</pre>
+{% endif %}
